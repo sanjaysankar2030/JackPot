@@ -1,8 +1,10 @@
 # Jackpot — Java Tokenization Library
 > A dependency-free Java tokenization framework supporting BPE, WordPiece, and Unigram.
 
----
 
+# NOTE STILL UNDER ACTIVE DEVELOPMENT 
+
+---
 ## Project Structure
 
 ```
