@@ -1,12 +1,7 @@
-package core;
+package utils;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.PriorityQueue;
 
-public class Utils{
+public class Utils implements UtilsInterface{
 
     public void findMaxFreqs(Map<String, Integer> pairFrequency, int n) {
     // PriorityQueue for finding top 10 values

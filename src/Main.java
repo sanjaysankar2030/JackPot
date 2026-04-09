@@ -1,28 +1,34 @@
 package main;
 
 import Bpe.BpeTokenizer;
-import core.Utils;
+// import utils.Utils;
+// import pretokenizers.WhitespaceSplitter;
+// import train.BpeTrainer;
 import java.util.HashMap;
 import java.util.Map;
+import io.ModelRead;
+import java.io.IOException;
 
 public class Main {
   public static void main(String[] args) {
     Map<String, Integer> tokens = new HashMap<>();
     BpeTokenizer bpe = new BpeTokenizer();
-    Utils utils = new Utils();
-    bpe.setText(
-        "Byte-Pair Encoding (BPE) is a text tokenization technique in Natural Language"
-            + " Processing  It breaks down words into smaller, meaningful pieces called"
-            + " subwords  It works by repeatedly finding the most common pairs of characters in"
-            + " the text and combining them into a new subword until the vocabulary reaches a"
-            + " desired size  This technique helps in handling rare or unknown words by"
-            + " breaking them into smaller parts that the model has already learned during"
-            + " training  By reducing the vocabulary size, it makes it easier to work with"
-            + " large amounts of text while allowing the model to understand wide variety of"
-            + " languages ");
-    // System.out.println(bpe.getText());
-    tokens = bpe.tokenize();
-    utils.findMaxFreqs(tokens, 10);
+    // Utils utils = new Utils();
+    // BpeTrainer train =new BpeTrainer();
+    // WhitespaceSplitter splitter =new WhitespaceSplitter();
+    // ModelRead read = new ModelRead();
+    // try {
+    //   String data = read.readFileBytes("E:\\Projects\\Bpe_Java\\src\\text.jkpt");
+    //   System.out.println(data);
+    // } catch (IOException ioe) {
+    //   ioe.printStackTrace();
+    // }
+    tokens = bpe.tokenize("E:\\Projects\\Bpe_Java\\src\\text.jkpt");
+    System.out.println(tokens);
+    // splitted=splitter.split();
+    // tokens = bpe.tokenize();
+    // utils.findMaxFreqs(tokens, 10);
+    // train.train(tokens);
   }
 }
 
