@@ -1,7 +1,7 @@
 package main;
 
 import Bpe.BpeTokenizer;
-// import utils.Utils;
+import utils.Utils;
 // import pretokenizers.WhitespaceSplitter;
 // import train.BpeTrainer;
 import java.util.HashMap;
@@ -12,6 +12,7 @@ import java.io.IOException;
 public class Main {
   public static void main(String[] args) {
     Map<String, Integer> tokens = new HashMap<>();
+    Utils util=new Utils();
     BpeTokenizer bpe = new BpeTokenizer();
     // Utils utils = new Utils();
     // BpeTrainer train =new BpeTrainer();
@@ -25,6 +26,7 @@ public class Main {
     // }
     tokens = bpe.tokenize("E:\\Projects\\Bpe_Java\\src\\text.jkpt");
     System.out.println(tokens);
+    util.findMaxFreqs(tokens,10);
     // splitted=splitter.split();
     // tokens = bpe.tokenize();
     // utils.findMaxFreqs(tokens, 10);
