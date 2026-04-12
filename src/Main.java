@@ -24,13 +24,12 @@ public class Main {
     // } catch (IOException ioe) {
     //   ioe.printStackTrace();
     // }
+    // splitted=splitter.split();
     tokens = bpe.tokenize("E:\\Projects\\Bpe_Java\\src\\text.jkpt");
     System.out.println(tokens);
     util.findMaxFreqs(tokens,10);
-    // splitted=splitter.split();
-    // tokens = bpe.tokenize();
-    // utils.findMaxFreqs(tokens, 10);
     // train.train(tokens);
+    // train.train(String path);
   }
 }
 

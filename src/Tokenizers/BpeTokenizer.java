@@ -1,12 +1,15 @@
 package Bpe;
 
+import core.Tokenizer;
 import io.ModelRead;
+import PreTokenizer.WhitespaceSplitter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BpeTokenizer {
+
+public class BpeTokenizer implements Tokenizer {
   private String text;
   private Map<String, Integer> map = new HashMap<>();
   int freq;
@@ -16,8 +19,7 @@ public class BpeTokenizer {
     this.map = map;
   }
 
-  public Map<String, Integer> tokenize(String path) {
-
+  public void load(String path) {
     ModelRead read = new ModelRead();
     try {
       text = read.readFileBytes(path);
@@ -25,6 +27,28 @@ public class BpeTokenizer {
       ioe.printStackTrace();
     }
     System.out.println("Text : " + text);
+  }
+
+  public void save(String path) {
+    // Saves the vocabulary to the file
+  }
+
+  public List<Integer> encode(String text) {
+    //encode
+  }
+
+  public Map<String, Integer> tokenize(String corpus, int vocabSize) {
+  }
+
+  void train(String corpus, int vocabSize) {
+    text = load(corpus);
+    List<String>splitted=WhitespaceSplitter.split(corpus);
+    tokenize(String text);
+    List<Integers> encode;
+  }
+}
+
+/*
     // string converted to charArray
     char[] tokens = text.toCharArray();
     System.out.println(tokens);
@@ -48,7 +72,12 @@ public class BpeTokenizer {
           map.put(pairs_str, map.get(pairs_str) + 1);
         }
       }
-}
-return map;
-}
-}
+    }
+    return map;
+*/
+
+
+
+
+
+
